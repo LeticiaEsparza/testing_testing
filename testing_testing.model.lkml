@@ -10,6 +10,8 @@ datagroup: testing_testing_default_datagroup {
 
 persist_with: testing_testing_default_datagroup
 
+explore: socialcode_test {}
+
 explore: events {
   join: users {
     type: left_outer
@@ -63,6 +65,14 @@ explore: orders {
 explore: products {}
 
 explore: schema_migrations {}
+
+explore: order_items_foreign {
+  view_name: order_items
+  join: orders {
+    type: inner
+    foreign_key: order_items.order_id
+  }
+}
 
 explore: user_data {
   join: users {
