@@ -60,6 +60,10 @@ view: users {
   dimension: state {
     type: string
     sql: ${TABLE}.state ;;
+    link: {
+      label: "Target Dashboard 71"
+      url: "/dashboards/71?State={{ value | url_encode }}&Status of Order={{ orders.status | url_encode }}"
+    }
   }
 
   dimension: zip {
